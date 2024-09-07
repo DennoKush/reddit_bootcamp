@@ -1,0 +1,1536 @@
+[2024-09-07T12:54:03.102+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-07T12:54:03.185+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2023-12-08T00:00:00+00:00 [queued]>
+[2024-09-07T12:54:03.203+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2023-12-08T00:00:00+00:00 [queued]>
+[2024-09-07T12:54:03.204+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2024-09-07T12:54:03.370+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): load_data_to_warehouse> on 2023-12-08 00:00:00+00:00
+[2024-09-07T12:54:03.398+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1029) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-07T12:54:03.401+0000] {standard_task_runner.py:63} INFO - Started process 1038 to run task
+[2024-09-07T12:54:03.399+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'reddit_etl', 'load_data_to_warehouse', 'scheduled__2023-12-08T00:00:00+00:00', '--job-id', '228', '--raw', '--subdir', 'DAGS_FOLDER/reddit.py', '--cfg-path', '/tmp/tmp93xzo2z3']
+[2024-09-07T12:54:03.402+0000] {standard_task_runner.py:91} INFO - Job 228: Subtask load_data_to_warehouse
+[2024-09-07T12:54:03.636+0000] {task_command.py:426} INFO - Running <TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2023-12-08T00:00:00+00:00 [running]> on host 42d604ea5ce6
+[2024-09-07T12:54:03.992+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='reddithackathon' AIRFLOW_CTX_DAG_ID='reddit_etl' AIRFLOW_CTX_TASK_ID='load_data_to_warehouse' AIRFLOW_CTX_EXECUTION_DATE='2023-12-08T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-12-08T00:00:00+00:00'
+[2024-09-07T12:54:03.993+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-07T12:54:04.076+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.077+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.079+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.080+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.081+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.081+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.082+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.083+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.083+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.084+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.085+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.086+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.087+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.087+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.088+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.088+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.089+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.090+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.090+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.091+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.091+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.092+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.092+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.093+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.093+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.094+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.095+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.095+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.096+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.096+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.097+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.097+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.098+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.098+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.099+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.099+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.100+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.101+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.101+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.102+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.103+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.103+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.104+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.105+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.105+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.106+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.106+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.107+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.107+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.108+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.109+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.109+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.110+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.110+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.111+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.111+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.112+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.112+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.113+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.113+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.114+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.114+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.115+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.115+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.116+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.117+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.117+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.118+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.119+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.119+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.120+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.120+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.121+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.121+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.122+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.122+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.123+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.123+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.124+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.124+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.125+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.125+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.126+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.126+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.127+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.127+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.128+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.128+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.129+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.129+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.130+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.130+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.131+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.131+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.132+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.132+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.133+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.133+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.134+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.134+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.135+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.135+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.136+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.137+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.138+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.139+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.139+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.140+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.144+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.145+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.145+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.146+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.146+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.147+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.147+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.148+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.149+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.149+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.150+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.151+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.152+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.152+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.153+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.154+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.154+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.155+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.155+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.156+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.156+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.157+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.157+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.158+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.159+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.159+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.160+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.160+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.161+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.161+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.162+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.162+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.163+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.164+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.164+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.165+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.165+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.166+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.167+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.167+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.168+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.169+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.169+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.170+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.171+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.171+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.172+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.172+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.173+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.173+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.174+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.175+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.176+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.177+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.177+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.178+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.184+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.185+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.186+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.187+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.196+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.196+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.197+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.197+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.198+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.199+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.201+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.203+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.204+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.205+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.205+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.209+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.210+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.211+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.211+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.213+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.213+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.214+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.214+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.215+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.216+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.216+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.217+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.217+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.218+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.219+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.220+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.220+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.221+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.222+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.222+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.223+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.224+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.224+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.225+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.226+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.226+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.227+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.227+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.228+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.228+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.229+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.230+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.230+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.231+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.232+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.233+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.234+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.234+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.235+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.235+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.236+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.237+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.238+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.239+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.239+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.239+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.240+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.240+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.241+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.241+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.242+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.242+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.243+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.244+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.244+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.245+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.245+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.246+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.246+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.247+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.247+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.250+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.251+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.252+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.253+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.253+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.254+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.255+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.255+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.256+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.256+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.257+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.257+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.258+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.259+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.259+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.260+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.260+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.261+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.261+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.262+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.262+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.263+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.263+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.264+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.264+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.265+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.266+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.266+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.267+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.267+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.269+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.269+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.270+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.271+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.271+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.272+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.272+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.273+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.273+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.274+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.274+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.275+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.275+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.276+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.276+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.277+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.277+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.278+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.279+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.279+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.280+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.280+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.281+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.281+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.282+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.282+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.283+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.284+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.284+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.285+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:54:04.286+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-09-07T12:54:04.287+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-07T12:54:04.321+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=reddit_etl, task_id=load_data_to_warehouse, execution_date=20231208T000000, start_date=20240907T125403, end_date=20240907T125404
+[2024-09-07T12:54:04.562+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-09-07T12:54:04.672+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-07T12:54:04.677+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-09-07T13:50:43.302+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-07T13:50:43.447+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2023-12-08T00:00:00+00:00 [queued]>
+[2024-09-07T13:50:43.483+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2023-12-08T00:00:00+00:00 [queued]>
+[2024-09-07T13:50:43.495+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2024-09-07T13:50:44.013+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): load_data_to_warehouse> on 2023-12-08 00:00:00+00:00
+[2024-09-07T13:50:44.057+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'reddit_etl', 'load_data_to_warehouse', 'scheduled__2023-12-08T00:00:00+00:00', '--job-id', '168', '--raw', '--subdir', 'DAGS_FOLDER/reddit.py', '--cfg-path', '/tmp/tmphqk56ypi']
+[2024-09-07T13:50:44.065+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=596) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-07T13:50:44.076+0000] {standard_task_runner.py:63} INFO - Started process 605 to run task
+[2024-09-07T13:50:44.076+0000] {standard_task_runner.py:91} INFO - Job 168: Subtask load_data_to_warehouse
+[2024-09-07T13:50:44.361+0000] {task_command.py:426} INFO - Running <TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2023-12-08T00:00:00+00:00 [running]> on host 3c1025a7eaca
+[2024-09-07T13:50:44.878+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='reddithackathon' AIRFLOW_CTX_DAG_ID='reddit_etl' AIRFLOW_CTX_TASK_ID='load_data_to_warehouse' AIRFLOW_CTX_EXECUTION_DATE='2023-12-08T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-12-08T00:00:00+00:00'
+[2024-09-07T13:50:44.894+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-07T13:50:45.211+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:45.286+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:45.320+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:45.389+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:45.429+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:45.487+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:45.556+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:45.610+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:45.650+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:45.691+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:45.756+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:45.796+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:45.870+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:45.919+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:45.971+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.010+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.061+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.095+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.138+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.187+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.281+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.361+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.398+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.473+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.517+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.559+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.598+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.663+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.722+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.787+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.826+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.897+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:46.980+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.029+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.110+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.157+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.237+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.305+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.373+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.411+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.464+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.497+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.530+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.574+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.611+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.660+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.691+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.801+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.856+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.922+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:47.989+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.023+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.065+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.130+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.287+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.336+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.402+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.459+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.528+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.592+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.656+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.700+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.729+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.768+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.798+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.832+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.885+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.935+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:48.989+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.087+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.134+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.177+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.273+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.343+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.398+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.455+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.488+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.521+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.559+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.588+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.620+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.649+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.733+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.805+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.838+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.895+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:49.963+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.011+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.071+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.149+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.243+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.322+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.371+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.412+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.477+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.516+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.549+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.588+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.632+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.686+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.755+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.823+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:50.909+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.007+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.167+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.222+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.266+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.306+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.345+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.403+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.438+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.500+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.541+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.601+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.638+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.692+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.743+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.771+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.826+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.871+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.918+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:51.968+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.013+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.058+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.112+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.151+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.204+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.261+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.327+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.377+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.427+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.494+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.565+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.633+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.695+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.739+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.793+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.839+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.895+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:52.968+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.005+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.052+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.097+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.150+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.205+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.272+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.326+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.373+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.433+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.503+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.570+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.631+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.692+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.753+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.808+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.865+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.923+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:53.966+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.029+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.072+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.139+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.203+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.272+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.323+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.372+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.409+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.459+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.494+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.551+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.604+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.646+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.698+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.752+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.799+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.846+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.919+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:54.989+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.049+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.094+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.152+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.194+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.235+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.284+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.325+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.377+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.433+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.503+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.566+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.635+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.728+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.833+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.866+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:55.943+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.000+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.069+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.109+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.165+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.210+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.266+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.334+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.416+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.483+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.552+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.591+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.647+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.717+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.805+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.844+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.926+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:56.987+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.053+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.104+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.180+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.238+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.315+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.359+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.394+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.435+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.498+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.535+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.593+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.671+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.711+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.784+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.825+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.890+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.964+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:57.998+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:58.064+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:58.158+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:58.228+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:58.276+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:58.352+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:58.456+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:58.583+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:58.683+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:58.758+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:58.822+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:58.893+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:58.956+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:59.013+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:59.081+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:59.146+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:59.213+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:59.274+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:59.372+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:59.421+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:59.490+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:59.594+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:59.684+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:59.762+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:59.848+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:59.951+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.009+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.056+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.112+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.179+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.258+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.313+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.360+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.446+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.495+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.554+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.638+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.703+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.779+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.853+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.900+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:00.964+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.040+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.106+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.158+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.235+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.284+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.350+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.448+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.517+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.583+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.631+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.690+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.729+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.772+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.829+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.883+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.928+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:01.985+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:02.052+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:02.110+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:02.161+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:02.215+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:02.282+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:02.322+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:02.369+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:02.436+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:02.502+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:02.547+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:02.630+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:02.708+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:02.778+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:02.865+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:51:02.879+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-09-07T13:51:02.890+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-07T13:51:02.979+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=reddit_etl, task_id=load_data_to_warehouse, execution_date=20231208T000000, start_date=20240907T135043, end_date=20240907T135102
+[2024-09-07T13:51:03.138+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-09-07T13:51:03.567+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-07T13:51:03.570+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

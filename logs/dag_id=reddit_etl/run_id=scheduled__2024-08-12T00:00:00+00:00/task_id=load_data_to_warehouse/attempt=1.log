@@ -1,0 +1,618 @@
+[2024-09-07T12:55:21.342+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-07T12:55:21.422+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2024-08-12T00:00:00+00:00 [queued]>
+[2024-09-07T12:55:21.438+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2024-08-12T00:00:00+00:00 [queued]>
+[2024-09-07T12:55:21.438+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2024-09-07T12:55:21.531+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): load_data_to_warehouse> on 2024-08-12 00:00:00+00:00
+[2024-09-07T12:55:21.549+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1809) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-07T12:55:21.551+0000] {standard_task_runner.py:63} INFO - Started process 1819 to run task
+[2024-09-07T12:55:21.550+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'reddit_etl', 'load_data_to_warehouse', 'scheduled__2024-08-12T00:00:00+00:00', '--job-id', '602', '--raw', '--subdir', 'DAGS_FOLDER/reddit.py', '--cfg-path', '/tmp/tmp8wxvzl5p']
+[2024-09-07T12:55:21.553+0000] {standard_task_runner.py:91} INFO - Job 602: Subtask load_data_to_warehouse
+[2024-09-07T12:55:21.694+0000] {task_command.py:426} INFO - Running <TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2024-08-12T00:00:00+00:00 [running]> on host 42d604ea5ce6
+[2024-09-07T12:55:21.913+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='reddithackathon' AIRFLOW_CTX_DAG_ID='reddit_etl' AIRFLOW_CTX_TASK_ID='load_data_to_warehouse' AIRFLOW_CTX_EXECUTION_DATE='2024-08-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-12T00:00:00+00:00'
+[2024-09-07T12:55:21.914+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-07T12:55:21.977+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.977+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.978+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.978+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.979+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.979+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.980+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.980+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.981+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.982+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.982+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.983+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.983+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.984+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.984+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.985+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.985+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.986+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.987+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.987+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.988+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.988+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.989+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.989+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.990+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.990+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.991+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.992+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.992+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.993+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.993+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.994+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.994+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.995+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.996+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.996+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.997+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.997+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.998+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.999+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:21.999+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.000+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.000+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.001+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.001+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.002+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.002+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.003+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.003+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.004+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.004+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.005+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.005+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.006+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.006+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.007+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.007+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.008+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.009+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.009+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.009+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.010+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.010+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.010+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.011+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.011+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.011+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.012+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.012+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.013+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.013+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.013+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.014+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.014+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.015+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.015+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.016+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.016+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.016+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.017+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.017+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.017+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.018+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.018+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.018+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.019+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.019+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.020+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.020+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.021+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.021+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.022+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.022+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.023+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.023+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.024+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.024+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.025+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.025+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.026+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.026+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.027+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.027+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.028+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.028+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.029+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.029+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.029+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.030+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.030+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.030+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.031+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.031+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.032+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.032+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.033+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.033+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.034+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.034+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.035+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.036+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.036+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.037+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.037+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.038+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.038+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.039+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.039+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.040+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.040+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.041+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.041+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.042+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.042+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.043+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.043+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.044+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.045+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.045+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.046+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.046+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.047+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.047+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.047+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.048+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.049+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.049+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.050+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.050+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.051+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.051+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.052+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.052+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.053+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.053+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.054+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.055+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.055+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.056+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.056+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.057+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.057+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.058+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.058+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.058+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.059+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.059+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.060+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.060+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.061+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.061+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.061+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.062+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.062+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.062+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.063+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.063+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.063+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.064+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.064+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.064+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.065+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.065+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.065+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.066+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.066+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.066+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.067+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.067+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.067+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.068+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.068+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.069+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.069+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.069+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.070+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.070+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.071+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.071+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.072+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.072+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.072+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.073+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.073+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.074+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.074+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.075+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.075+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.076+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.076+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.077+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.077+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.078+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.079+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.079+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.079+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.080+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.080+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.080+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.081+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.081+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.081+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.082+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.082+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.082+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.083+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.083+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.083+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.084+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.084+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.085+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.085+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.085+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.086+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.086+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.087+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.087+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.087+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.088+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.088+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.088+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.089+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.089+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.090+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.091+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.091+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.092+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.092+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.093+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.093+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.094+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.094+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.095+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.095+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.096+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.096+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.097+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.097+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.098+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.098+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.099+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.099+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.100+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.100+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.101+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.101+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.102+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.102+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.103+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.103+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.104+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.105+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.105+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.106+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.106+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.107+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.107+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.108+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.108+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.109+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.109+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.110+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.110+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.111+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.112+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.112+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.112+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.113+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.113+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.113+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.114+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.114+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.114+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.115+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.115+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.115+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.115+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.116+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.116+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.116+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:55:22.117+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-09-07T12:55:22.117+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-07T12:55:22.138+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=reddit_etl, task_id=load_data_to_warehouse, execution_date=20240812T000000, start_date=20240907T125521, end_date=20240907T125522
+[2024-09-07T12:55:22.170+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-09-07T12:55:22.203+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-07T12:55:22.204+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

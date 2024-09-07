@@ -1,0 +1,1064 @@
+[2024-09-07T12:48:53.866+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-07T12:48:53.944+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2023-11-28T00:00:00+00:00 [queued]>
+[2024-09-07T12:48:53.959+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2023-11-28T00:00:00+00:00 [queued]>
+[2024-09-07T12:48:53.960+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2024-09-07T12:48:53.981+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): load_data_to_warehouse> on 2023-11-28 00:00:00+00:00
+[2024-09-07T12:48:53.997+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=814) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-07T12:48:53.998+0000] {standard_task_runner.py:63} INFO - Started process 818 to run task
+[2024-09-07T12:48:53.996+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'reddit_etl', 'load_data_to_warehouse', 'scheduled__2023-11-28T00:00:00+00:00', '--job-id', '173', '--raw', '--subdir', 'DAGS_FOLDER/reddit.py', '--cfg-path', '/tmp/tmpw4_kzo_8']
+[2024-09-07T12:48:53.999+0000] {standard_task_runner.py:91} INFO - Job 173: Subtask load_data_to_warehouse
+[2024-09-07T12:48:54.096+0000] {task_command.py:426} INFO - Running <TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2023-11-28T00:00:00+00:00 [running]> on host 42d604ea5ce6
+[2024-09-07T12:48:54.269+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='reddithackathon' AIRFLOW_CTX_DAG_ID='reddit_etl' AIRFLOW_CTX_TASK_ID='load_data_to_warehouse' AIRFLOW_CTX_EXECUTION_DATE='2023-11-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-28T00:00:00+00:00'
+[2024-09-07T12:48:54.270+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-07T12:48:54.324+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2024-09-07T12:48:54.324+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-07T12:48:54.325+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/../scripts/load_data.py", line 28, in load_data
+    connection = psycopg2.connect(
+                 ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/airflow/dags/../scripts/load_data.py", line 74, in load_data
+    if connection:
+       ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'connection' where it is not associated with a value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/reddit.py", line 53, in load_transformed_data
+    load_data.load_data(post)  # Load each post using load_data script
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/../scripts/load_data.py", line 78, in load_data
+    if cursor:
+       ^^^^^^
+UnboundLocalError: cannot access local variable 'cursor' where it is not associated with a value
+[2024-09-07T12:48:54.345+0000] {taskinstance.py:1205} INFO - Marking task as UP_FOR_RETRY. dag_id=reddit_etl, task_id=load_data_to_warehouse, execution_date=20231128T000000, start_date=20240907T124853, end_date=20240907T124854
+[2024-09-07T12:48:54.362+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 173 for task load_data_to_warehouse (cannot access local variable 'cursor' where it is not associated with a value; 818)
+[2024-09-07T12:48:54.414+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-09-07T12:48:54.555+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-07T12:48:54.557+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-09-07T13:50:17.417+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-07T13:50:17.692+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2023-11-28T00:00:00+00:00 [queued]>
+[2024-09-07T13:50:17.716+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2023-11-28T00:00:00+00:00 [queued]>
+[2024-09-07T13:50:17.718+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2024-09-07T13:50:17.911+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): load_data_to_warehouse> on 2023-11-28 00:00:00+00:00
+[2024-09-07T13:50:17.975+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=530) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-07T13:50:17.979+0000] {standard_task_runner.py:63} INFO - Started process 537 to run task
+[2024-09-07T13:50:17.969+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'reddit_etl', 'load_data_to_warehouse', 'scheduled__2023-11-28T00:00:00+00:00', '--job-id', '143', '--raw', '--subdir', 'DAGS_FOLDER/reddit.py', '--cfg-path', '/tmp/tmpb4a3vjzo']
+[2024-09-07T13:50:17.989+0000] {standard_task_runner.py:91} INFO - Job 143: Subtask load_data_to_warehouse
+[2024-09-07T13:50:18.286+0000] {task_command.py:426} INFO - Running <TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2023-11-28T00:00:00+00:00 [running]> on host 3c1025a7eaca
+[2024-09-07T13:50:18.851+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='reddithackathon' AIRFLOW_CTX_DAG_ID='reddit_etl' AIRFLOW_CTX_TASK_ID='load_data_to_warehouse' AIRFLOW_CTX_EXECUTION_DATE='2023-11-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-28T00:00:00+00:00'
+[2024-09-07T13:50:18.853+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-07T13:50:19.091+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:19.151+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:19.224+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:19.295+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:19.348+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:19.399+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:19.465+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:19.533+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:19.592+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:19.660+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:19.709+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:19.750+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:19.821+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:19.875+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:19.941+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:19.988+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.035+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.093+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.135+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.185+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.223+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.269+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.308+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.359+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.407+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.438+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.482+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.533+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.569+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.621+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.683+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.732+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.776+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.834+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.919+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:20.987+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.040+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.108+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.158+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.219+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.254+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.300+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.342+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.398+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.445+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.484+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.545+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.611+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.656+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.712+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.764+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.837+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.897+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:21.965+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.048+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.114+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.163+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.221+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.270+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.322+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.375+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.414+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.456+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.514+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.574+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.661+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.752+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.792+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.830+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.873+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.950+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:22.988+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:23.057+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:23.109+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:23.186+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:23.240+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:23.288+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:23.342+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:23.405+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:23.472+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:23.513+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:23.557+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:23.620+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:23.686+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:23.756+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:23.851+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:23.939+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.001+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.037+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.112+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.269+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.337+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.402+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.466+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.504+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.537+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.587+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.644+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.681+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.727+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.768+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.810+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.854+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.929+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:24.976+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:25.061+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:25.135+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:25.207+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:25.263+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:25.376+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:25.464+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:25.566+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:25.654+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:25.728+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:25.798+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:25.908+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:25.986+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:26.089+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:26.164+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:26.205+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:26.246+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:26.283+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:26.369+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:26.450+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:26.514+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:26.569+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:26.654+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:26.732+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:26.837+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:26.977+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:27.095+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:27.264+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:27.352+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:27.426+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:27.610+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:27.735+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:27.817+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:27.904+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:27.971+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:28.008+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:28.044+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:28.091+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:28.151+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:28.239+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:28.327+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:28.411+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:28.462+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:28.526+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:28.598+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:28.658+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:28.741+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:28.795+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:28.865+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:28.933+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.012+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.045+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.108+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.195+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.255+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.322+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.402+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.497+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.544+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.614+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.670+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.721+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.773+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.827+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.873+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.916+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:29.951+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.014+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.080+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.137+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.202+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.233+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.278+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.343+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.397+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.462+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.560+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.647+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.685+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.777+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.838+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.886+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.931+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:30.993+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:31.076+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:31.119+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:31.198+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:31.296+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:31.376+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:31.418+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:31.519+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:31.581+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:31.635+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:31.672+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:31.774+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:31.854+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:31.895+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:31.932+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:31.989+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.029+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.079+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.122+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.165+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.215+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.247+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.275+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.323+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.369+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.409+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.437+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.485+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.531+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.571+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.616+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.658+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.711+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.755+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.799+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.845+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.887+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.943+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:32.972+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.020+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.059+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.104+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.141+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.173+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.206+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.240+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.271+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.297+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.327+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.357+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.390+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.425+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.454+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.486+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.513+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.541+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.570+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.594+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.618+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.645+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.676+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.704+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.737+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.767+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.797+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.826+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.855+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.893+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.923+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.956+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:33.992+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.023+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.052+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.085+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.145+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.175+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.198+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.222+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.248+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.271+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.296+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.322+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.345+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.369+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.390+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.415+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.447+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.479+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.517+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.541+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.565+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.595+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.623+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.660+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.689+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.720+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.751+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.786+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.838+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.884+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.917+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.950+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:34.980+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:35.012+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:35.047+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:35.079+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:35.106+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:35.139+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:35.168+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:35.199+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:35.229+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:35.251+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:35.273+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:50:35.274+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-09-07T13:50:35.275+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-07T13:50:35.323+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=reddit_etl, task_id=load_data_to_warehouse, execution_date=20231128T000000, start_date=20240907T135017, end_date=20240907T135035
+[2024-09-07T13:50:35.403+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-09-07T13:50:35.470+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-07T13:50:35.472+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-09-07T13:56:29.664+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-07T13:56:29.824+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2023-11-28T00:00:00+00:00 [queued]>
+[2024-09-07T13:56:29.869+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2023-11-28T00:00:00+00:00 [queued]>
+[2024-09-07T13:56:29.870+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2024-09-07T13:56:29.921+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): load_data_to_warehouse> on 2023-11-28 00:00:00+00:00
+[2024-09-07T13:56:29.944+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=540) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-07T13:56:29.946+0000] {standard_task_runner.py:63} INFO - Started process 545 to run task
+[2024-09-07T13:56:29.954+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'reddit_etl', 'load_data_to_warehouse', 'scheduled__2023-11-28T00:00:00+00:00', '--job-id', '143', '--raw', '--subdir', 'DAGS_FOLDER/reddit.py', '--cfg-path', '/tmp/tmpb0yv80_m']
+[2024-09-07T13:56:29.964+0000] {standard_task_runner.py:91} INFO - Job 143: Subtask load_data_to_warehouse
+[2024-09-07T13:56:30.312+0000] {task_command.py:426} INFO - Running <TaskInstance: reddit_etl.load_data_to_warehouse scheduled__2023-11-28T00:00:00+00:00 [running]> on host 8bc190d52c81
+[2024-09-07T13:56:30.809+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='reddithackathon' AIRFLOW_CTX_DAG_ID='reddit_etl' AIRFLOW_CTX_TASK_ID='load_data_to_warehouse' AIRFLOW_CTX_EXECUTION_DATE='2023-11-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-28T00:00:00+00:00'
+[2024-09-07T13:56:30.810+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-07T13:56:30.994+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.046+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.121+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.153+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.214+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.264+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.323+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.358+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.421+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.477+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.548+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.616+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.679+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.737+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.789+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.831+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.872+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.916+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:31.997+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:32.052+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:32.150+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:32.220+0000] {logging_mixin.py:188} INFO - Error loading data: relation "dim_author" does not exist
+LINE 2:             INSERT INTO dim_author (author_id, author_name)
+                                ^
+[2024-09-07T13:56:32.250+0000] {logging_mixin.py:188} INFO - Error loading data: connection to server at "postgres" (192.168.64.3), port 5432 failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.

@@ -8,9 +8,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Reddit API credentials
-client_id = os.getenv("client_id")
-client_secret = os.getenv("client_secret")
-user_agent = os.getenv("user_agent")
+client_id = os.getenv("REDDIT_CLIENT_ID")
+client_secret = os.getenv("REDDIT_CLIENT_SECRET")
+user_agent = os.getenv("REDDIT_USER_AGENT")
 
 # Initialize Reddit API client
 reddit = praw.Reddit(

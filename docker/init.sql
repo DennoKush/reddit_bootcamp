@@ -18,9 +18,7 @@ CREATE TABLE IF NOT EXISTS fact_post (
     num_comments INT,
     created_at TIMESTAMP,
     url TEXT,
-    selftext TEXT,
-    FOREIGN KEY (author_id) REFERENCES dim_author(author_id),
-    FOREIGN KEY (subreddit_id) REFERENCES dim_subreddit(subreddit_id)
+    selftext TEXT
     );
 
 CREATE TABLE dim_date (

@@ -25,9 +25,7 @@ def transform_data(data):
         "num_comments": data["num_comments"],
         "created_at": created_at,
         "url": data["url"],
-        "selftext": data["selftext"],
-        "category": category,
-        "subcategory": subcategory
+        "selftext": data["selftext"]
     }
 
     return transformed_data

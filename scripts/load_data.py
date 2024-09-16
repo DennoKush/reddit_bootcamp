@@ -4,23 +4,14 @@ from os.path import join, dirname
 from dotenv import load_dotenv
 
 # Load environment variables
-env_path = os.path.join(
-    os.path.dirname(
-        os.path.dirname(
-            os.path.abspath(__file__)
-        )
-    ),
-    '.env'
-)
-
-load_dotenv(env_path)
+load_dotenv()
 
 # Database connection details
-DB_NAME = "airflow_logs"
-DB_USER = "airflow_user"
-DB_PASSWORD = "6VkQHqvcrg86BZTh"
-DB_HOST = "postgres"
-DB_PORT = "5432"
+DB_NAME = os.getenv("POSTGRES_DB")
+DB_USER = os.getenv("POSTGRES_USER")
+DB_PASSWORD = os.getenv("POSTGRES_PASSWORD")
+DB_HOST = os.getenv("POSTGRES_HOST")
+DB_PORT = os.getenv("POSTGRES_PORT")
 
 def load_data(transformed_data):
     connection = None  
@@ -51,8 +42,8 @@ def load_data(transformed_data):
 
         # Insert the post data into the fact_post table
         cursor.execute("""
-            INSERT INTO fact_post (post_id, title, author_id, subreddit_id, score, num_comments, created_at, url, selftext, category, subcategory)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            INSERT INTO fact_post (post_id, title, author_id, subreddit_id, score, num_comments, created_at, url, selftext)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
             ON CONFLICT (post_id) DO NOTHING;
         """, (
             transformed_data["post_id"],
@@ -63,9 +54,7 @@ def load_data(transformed_data):
             transformed_data["num_comments"],
             transformed_data["created_at"],
             transformed_data["url"],
-            transformed_data["selftext"],
-            transformed_data["category"],
-            transformed_data["subcategory"]
+            transformed_data["selftext"]
         ))
 
         connection.commit()

@@ -1,6 +1,7 @@
 import os
 import sys
 from airflow import DAG
+from airflow.utils.dates import days_ago
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 import json
@@ -13,7 +14,7 @@ from scripts import transform_data, load_data
 default_args = {
     'owner': 'reddithackathon',
     'depends_on_past': False,
-    'start_date': datetime(2023, 9, 1),
+    'start_date': days_ago(0),
     'email_on_failure': False,
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
@@ -27,31 +28,36 @@ dag = DAG(
     schedule_interval=timedelta(hours=48),
 )
 
-# Extract Task: Reads the Reddit data from JSON file in datasets directory
+# Extract Task: Fetch Reddit data and pass it using XCom
 def extract_reddit_data(**kwargs):
-    file_path = 'datasets/reddit_data.json'
-    with open(file_path, 'r') as file:
-        reddit_data = json.load(file)
-    return reddit_data
+    # Assuming main function fetches data from Reddit and returns it as a dictionary
+    from scripts.extract_data import main as fetch_data
+    all_data = fetch_data()
+    
+    # Push the fetched data to XCom
+    return all_data
 
 # Transform Task: Transforms the extracted data
 def transform_reddit_data(**kwargs):
     ti = kwargs['ti']  # Task instance to pull data
-    raw_data = ti.xcom_pull(task_ids='extract_reddit_data')
+    raw_data = ti.xcom_pull(task_ids='extract_reddit_data')  # Pull data from XCom
     transformed_data = []
+
     for key in raw_data:
-        for post in raw_data[key]['hot']:  
+        for post in raw_data[key]['hot']:
             transformed = transform_data.transform_data(post)
             transformed_data.append(transformed)
+    
+    # Return transformed data to XCom
     return transformed_data
 
 # Load Task: Loads transformed data into PostgreSQL
 def load_transformed_data(**kwargs):
     ti = kwargs['ti']
-    transformed_data = ti.xcom_pull(task_ids='transform_reddit_data') 
+    transformed_data = ti.xcom_pull(task_ids='transform_reddit_data')  # Pull data from XCom
     for post in transformed_data:
-        load_data.load_data(post) 
-        
+        load_data.load_data(post)
+
 # Define the PythonOperators
 extract_task = PythonOperator(
     task_id='extract_reddit_data',

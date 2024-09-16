@@ -66,19 +66,16 @@ x-airflow-common:
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
     # WARNING: Use _PIP_ADDITIONAL_REQUIREMENTS option ONLY for a quick checks
     # for other purpose (development, test and especially production usage) build/extend Airflow image.
-    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-openpyxl pandas psycopg2-binary}
+    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-pandas psycopg2-binary praw}
     # The following line can be used to set a custom config file, stored in the local config folder
     # If you want to use it, outcomment it and replace airflow.cfg with the name of your config file
     # AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
-    - ${AIRFLOW_PROJ_DIR:-.}/sql:/opt/airflow/sql
     - ${AIRFLOW_PROJ_DIR:-.}/scripts:/opt/airflow/scripts
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
-    - ${AIRFLOW_PROJ_DIR:-.}/datasets:/opt/airflow/datasets
-    - ${AIRFLOW_PROJ_DIR:-.}/datasets:/opt/airflow/datasets
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -97,7 +94,6 @@ services:
       POSTGRES_DB: ${AIRFLOW_DB}
     volumes:
       - ./scripts/create_logs.sh:/docker-entrypoint-initdb.d/create_logs.sh
-      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: [ "CMD", "pg_isready", "-U", "airflow_user" ]
       interval: 10s
@@ -106,22 +102,23 @@ services:
     restart: always
 
   reddit_postgres:
-    image: postgres:15    
+    build:
+      context: ./docker  
     environment:
-      POSTGRES_USER: wh_user
-      POSTGRES_PASSWORD: wh_password
-      POSTGRES_DB: reddit_dwh
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
-      - "54322:5432"
+      - "5436:5432"
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
-      - ./scripts/create_db.sh:/docker-entrypoint-initdb.d/create_db.sh
     healthcheck:
-      test: [ "CMD", "pg_isready", "-U", "wh_user" ]
+      test: [ "CMD", "pg_isready", "-U", "${POSTGRES_USER}" ]
       interval: 10s
       retries: 5
       start_period: 5s
     restart: always
+
 
   airflow-webserver:
     <<: *airflow-common
